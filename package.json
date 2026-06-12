@@ -1,0 +1,26 @@
+{
+  "name": "habibih-bot",
+  "version": "1.0.0",
+  "description": "Habibih Bot - WhatsApp Multi Device Bot (Baileys) dengan plugin system & sistem permission otomatis",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "pairing": "node index.js --pairing",
+    "qr": "node index.js --qr",
+    "dev": "node --watch index.js"
+  },
+  "author": "Habibi Official",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.0",
+    "@hapi/boom": "^10.0.1",
+    "chalk": "^5.3.0",
+    "node-cache": "^5.1.2",
+    "pino": "^9.5.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
