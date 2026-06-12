@@ -92,6 +92,24 @@ const config = {
     plugins: "./plugins",
   },
 
+  /* ============ ISLAMI / JADWAL SHOLAT ============ */
+  islami: {
+    defaultCity: "Jakarta", // kota default jadwal sholat
+    timezone: "Asia/Jakarta", // zona waktu (WIB)
+    method: 20, // metode hitung aladhan (20 = Kemenag RI)
+    // Gambar masjid pada notif sholat. Kosong = pakai `thumbnail` di atas.
+    mosqueImage: "",
+    // Audio adzan (opsional). Default contoh dari CDN aladhan (adzan umum).
+    adzanUrl: "https://cdn.aladhan.com/audio/adhans/a9.mp3",
+    // Khusus Subuh. Kosong = otomatis pakai adzanUrl.
+    // Tips: coba a1.mp3..a13.mp3 di CDN aladhan, pilih yang versi Subuh.
+    adzanSubuhUrl: "",
+    // Pengingat berapa menit sebelum masuk waktu sholat
+    reminderBeforeMinutes: 5,
+    // Ingatkan baca Surah Al-Kahfi setiap Jumat
+    jumatReminder: true,
+  },
+
   /* ============ LOGIN ============
    * method: "pairing" | "qr"  (bisa di-override lewat argumen CLI)
    * pairingNumber: nomor bot tanpa "+" / spasi, untuk pairing code

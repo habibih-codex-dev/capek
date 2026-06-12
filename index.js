@@ -34,6 +34,7 @@ import Database from "./lib/database.js";
 import { serialize } from "./lib/serialize.js";
 import { handleMessage } from "./handler.js";
 import { handleGroupParticipants } from "./lib/group-events.js";
+import { startPrayerScheduler } from "./lib/prayer-scheduler.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -169,6 +170,11 @@ async function startBot() {
       config.botNumber = sock.user?.id?.split(":")[0] || config.botNumber;
       log.success(`Terhubung sebagai ${sock.user?.id}`);
       log.system(`${config.botName} siap digunakan!`);
+      try {
+        startPrayerScheduler(sock, db, config);
+      } catch (e) {
+        log.error("Gagal memulai penjadwal autosholat:", e.message);
+      }
       try {
         rl.close();
       } catch {}
