@@ -20,6 +20,16 @@ const config = {
   website: "https://habibih.example.com",
   channel: "https://whatsapp.com/channel/0000000000000000000000", // link channel WA
 
+  /* ============ WHITELIST LINK ============
+   * Link di sini DIKECUALIKAN dari semua fitur anti-link (tidak akan dihapus).
+   * `website` & `channel` di atas otomatis ikut di-whitelist.
+   * Isi domain/link milikmu sendiri di sini. Contoh: "youtube.com/@channelku"
+   */
+  linkWhitelist: [
+    // "domainku.com",
+    // "instagram.com/akunku",
+  ],
+
   /* ============ SLOT API KEY (isi nanti) ============ */
   // Dikosongkan dulu. Plugin yang butuh akan memberi pesan jika kosong.
   apikey: {
