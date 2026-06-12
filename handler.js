@@ -203,6 +203,11 @@ export async function handleMessage(sock, m, raw, ctx) {
   // OnlyAdmin grup: jika diaktifkan, hanya admin/owner yang bisa pakai command
   if (m.isGroup && groupData?.onlyadmin && !isAdmin && !isOwner) return;
 
+  // Mute grup: bot diam (kecuali owner; admin tetap bisa pakai 'unmute')
+  if (m.isGroup && groupData?.mute && !isOwner) {
+    if (!(parsed.command === "unmute" && isAdmin)) return;
+  }
+
   /* ---- Cooldown anti-spam (owner dikecualikan) ---- */
   if (!isOwner && config.settings.cooldown > 0) {
     const key = `${m.sender}:${parsed.command}`;
