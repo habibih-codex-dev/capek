@@ -11,7 +11,6 @@
  *   7. Cooldown anti-spam
  *   8. Jalankan plugin dengan context lengkap
  */
-import baileys from "@whiskeysockets/baileys";
 import { log, printMessage } from "./lib/print.js";
 import {
   decodeJid,
@@ -20,8 +19,6 @@ import {
   sameUser,
 } from "./lib/jid.js";
 import * as func from "./lib/myfunc.js";
-
-const { jidNormalizedUser } = baileys;
 
 // Map cooldown: `${sender}:${command}` -> timestamp
 const cooldowns = new Map();

@@ -12,7 +12,13 @@
  *   node index.js --pairing  -> paksa pairing code
  *   node index.js --qr       -> paksa QR
  */
-import baileys from "@whiskeysockets/baileys";
+import makeWASocket, {
+  useMultiFileAuthState,
+  fetchLatestBaileysVersion,
+  DisconnectReason,
+  Browsers,
+  makeCacheableSignalKeyStore,
+} from "@whiskeysockets/baileys";
 import { Boom } from "@hapi/boom";
 import qrcode from "qrcode-terminal";
 import pino from "pino";
@@ -28,15 +34,6 @@ import Database from "./lib/database.js";
 import { serialize } from "./lib/serialize.js";
 import { handleMessage } from "./handler.js";
 import { handleGroupParticipants } from "./lib/group-events.js";
-
-const {
-  default: makeWASocket,
-  useMultiFileAuthState,
-  fetchLatestBaileysVersion,
-  DisconnectReason,
-  Browsers,
-  makeCacheableSignalKeyStore,
-} = baileys;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
