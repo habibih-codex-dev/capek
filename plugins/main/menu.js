@@ -14,6 +14,7 @@ const ICONS = {
   ai: "🤖",
   store: "🏪",
   fun: "🎮",
+  info: "🔎",
 };
 
 export default {
