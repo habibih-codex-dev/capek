@@ -44,6 +44,14 @@ const config = {
     // Contoh: "https://contoh-api/ytmp3?url={url}"
     ytmp3: "",
     ytmp4: "",
+    // Twitter/X: vxtwitter (gratis, tanpa key, stabil). {id} = id status tweet.
+    twitter: "https://api.vxtwitter.com/Twitter/status/{id}",
+    // Instagram & Facebook: belum ada API gratis yang awet -> swappable.
+    // Isi dengan endpoint yang mengembalikan JSON berisi media. {url} = link.
+    instagram: "",
+    facebook: "",
+    // Pinterest: kosong = pakai scrape bawaan. Isi untuk override via API.
+    pinterest: "",
   },
 
   /* ============ SETTINGS BOT ============ */
