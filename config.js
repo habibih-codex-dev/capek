@@ -29,6 +29,31 @@ const config = {
     // tambahkan key lain di sini bila perlu
   },
 
+  /* ============ ENDPOINT DOWNLOAD ============
+   * URL API gratis yang dipakai plugin download. Dibuat di sini agar
+   * mudah diganti bila suatu saat endpoint mati/limit — tanpa edit plugin.
+   * Semua tanpa API key.
+   */
+  downloads: {
+    // TikTok: tikwm (paling stabil, gratis, dukung video/slide/audio)
+    tiktok: "https://www.tikwm.com/api/",
+    // Maksimal foto yang dikirim untuk konten slide TikTok (anti-spam)
+    maxSlideImages: 20,
+    // (Opsional) endpoint unduh YouTube mp3/mp4. Kosongkan jika tidak ada.
+    // Format yang diharapkan: {url} akan diganti link video.
+    // Contoh: "https://contoh-api/ytmp3?url={url}"
+    ytmp3: "",
+    ytmp4: "",
+    // Twitter/X: vxtwitter (gratis, tanpa key, stabil). {id} = id status tweet.
+    twitter: "https://api.vxtwitter.com/Twitter/status/{id}",
+    // Instagram & Facebook: belum ada API gratis yang awet -> swappable.
+    // Isi dengan endpoint yang mengembalikan JSON berisi media. {url} = link.
+    instagram: "",
+    facebook: "",
+    // Pinterest: kosong = pakai scrape bawaan. Isi untuk override via API.
+    pinterest: "",
+  },
+
   /* ============ SETTINGS BOT ============ */
   settings: {
     // Mode bot: true = hanya owner yang bisa pakai (self), false = publik
