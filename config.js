@@ -29,6 +29,23 @@ const config = {
     // tambahkan key lain di sini bila perlu
   },
 
+  /* ============ ENDPOINT DOWNLOAD ============
+   * URL API gratis yang dipakai plugin download. Dibuat di sini agar
+   * mudah diganti bila suatu saat endpoint mati/limit — tanpa edit plugin.
+   * Semua tanpa API key.
+   */
+  downloads: {
+    // TikTok: tikwm (paling stabil, gratis, dukung video/slide/audio)
+    tiktok: "https://www.tikwm.com/api/",
+    // Maksimal foto yang dikirim untuk konten slide TikTok (anti-spam)
+    maxSlideImages: 20,
+    // (Opsional) endpoint unduh YouTube mp3/mp4. Kosongkan jika tidak ada.
+    // Format yang diharapkan: {url} akan diganti link video.
+    // Contoh: "https://contoh-api/ytmp3?url={url}"
+    ytmp3: "",
+    ytmp4: "",
+  },
+
   /* ============ SETTINGS BOT ============ */
   settings: {
     // Mode bot: true = hanya owner yang bisa pakai (self), false = publik
